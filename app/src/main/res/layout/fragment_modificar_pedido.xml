@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20sp"
+            android:layout_marginLeft="20sp"
+            android:layout_marginTop="20sp"
+            android:layout_marginEnd="20sp"
+            android:layout_marginRight="20sp"
+            android:layout_marginBottom="10sp"
+            android:fontFamily="@font/aldrich"
+            android:gravity="center"
+            android:text="MODIFICAR LINEA"
+            android:textSize="24sp" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="match_parent"
+            android:layout_height="199dp"
+            android:src="@drawable/productos" />
+
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_marginTop="10sp"
+            android:layout_marginRight="20sp"
+            android:fontFamily="@font/aldrich"
+            android:gravity="center"
+            android:text="CANTIDAD"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/tv_cantidad_mod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20sp"
+            android:layout_marginLeft="20sp"
+            android:layout_marginTop="5sp"
+            android:layout_marginEnd="20sp"
+            android:layout_marginRight="20sp"
+            android:layout_marginBottom="10sp"
+            android:backgroundTint="#698846"
+            android:ems="10"
+            android:fontFamily="@font/aldrich"
+            android:gravity="center"
+            android:inputType="number"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#969698" />
+
+
+        <Button
+            android:id="@+id/bt_modificar_producto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50sp"
+            android:layout_marginLeft="50sp"
+            android:layout_marginTop="10sp"
+            android:layout_marginEnd="50sp"
+            android:layout_marginRight="50sp"
+            android:layout_marginBottom="10sp"
+            android:background="@drawable/rounded_botton_productos"
+            android:fontFamily="@font/aldrich"
+            android:text="Guardar" />
+
+
+    </LinearLayout>
+
+
+</ScrollView>

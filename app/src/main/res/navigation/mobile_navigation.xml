@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/login">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.aplicaciongestiontiendasgestor.vistas.UsuariosFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_usuarios" >
+        <action
+            android:id="@+id/action_nav_home_to_crearUsuariosFragment"
+            app:destination="@id/crearUsuariosFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_infoUsuariosFragment"
+            app:destination="@id/infoUsuariosFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_modificarUsuarioFragment"
+            app:destination="@id/modificarUsuarioFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.aplicaciongestiontiendasgestor.vistas.ProductosFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_productos" >
+        <action
+            android:id="@+id/action_nav_gallery_to_crearProductoFragment"
+            app:destination="@id/crearProductoFragment" />
+        <action
+            android:id="@+id/action_nav_gallery_to_modificarProductosFragment"
+            app:destination="@id/modificarProductosFragment" />
+        <action
+            android:id="@+id/action_nav_gallery_to_infoProductoFragment"
+            app:destination="@id/infoProductoFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.example.aplicaciongestiontiendasgestor.vistas.TiendasFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_tiendas" >
+        <action
+            android:id="@+id/action_nav_slideshow_to_fragmentCrearTienda"
+            app:destination="@id/fragmentCrearTienda" />
+        <action
+            android:id="@+id/action_nav_slideshow_to_modificarTiendaFragment"
+            app:destination="@id/modificarTiendaFragment" />
+        <action
+            android:id="@+id/action_nav_slideshow_to_infoTiendas"
+            app:destination="@id/infoTiendas" />
+    </fragment>
+    <fragment
+        android:id="@+id/login"
+        android:name="com.example.aplicaciongestiontiendasgestor.vistas.Login"
+        android:label="Login" >
+        <action
+            android:id="@+id/action_login_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentCrearTienda"
+        android:name="com.example.aplicaciongestiontiendasgestor.vistas.CrearTiendaFragment"
+        android:label="fragment_crear_tienda"
+        tools:layout="@layout/fragment_crear_tienda" >
+        <action
+            android:id="@+id/action_fragmentCrearTienda_to_nav_slideshow"
+            app:destination="@id/nav_slideshow" />
+    </fragment>
+    <fragment
+        android:id="@+id/crearUsuariosFragment"
+        android:name="com.example.aplicaciongestiontiendasgestor.vistas.CrearUsuariosFragment"
+        android:label="fragment_crear_usuarios"
+        tools:layout="@layout/fragment_crear_usuarios" >
+        <action
+            android:id="@+id/action_crearUsuariosFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/crearProductoFragment"
+        android:name="com.example.aplicaciongestiontiendasgestor.vistas.CrearProductoFragment"
+        android:label="fragment_crear_producto"
+        tools:layout="@layout/fragment_crear_producto" >
+        <action
+            android:id="@+id/action_crearProductoFragment_to_nav_gallery"
+            app:destination="@id/nav_gallery" />
+    </fragment>
+    <fragment
+        android:id="@+id/infoUsuariosFragment"
+        android:name="com.example.aplicaciongestiontiendasgestor.vistas.InfoUsuariosFragment"
+        android:label="fragment_info_usuarios"
+        tools:layout="@layout/fragment_info_usuarios" >
+        <action
+            android:id="@+id/action_infoUsuariosFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_infoUsuariosFragment_to_listaPedidos"
+            app:destination="@id/listaPedidos" />
+    </fragment>
+    <fragment
+        android:id="@+id/modificarUsuarioFragment"
+        android:name="com.example.aplicaciongestiontiendasgestor.vistas.modificarUsuarioFragment"
+        android:label="fragment_modificar_usuario"
+        tools:layout="@layout/fragment_modificar_usuario" >
+        <action
+            android:id="@+id/action_modificarUsuarioFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/modificarTiendaFragment"
+        android:name="com.example.aplicaciongestiontiendasgestor.vistas.modificarTiendaFragment"
+        android:label="fragment_modificar_tienda"
+        tools:layout="@layout/fragment_modificar_tienda" >
+        <action
+            android:id="@+id/action_modificarTiendaFragment_to_nav_slideshow"
+            app:destination="@id/nav_slideshow" />
+    </fragment>
+    <fragment
+        android:id="@+id/infoTiendas"
+        android:name="com.example.aplicaciongestiontiendasgestor.vistas.infoTiendasFrgament"
+        android:label="fragment_info_tiendas"
+        tools:layout="@layout/fragment_info_tiendas" />
+
+    <fragment
+        android:id="@+id/modificarProductosFragment"
+        android:name="com.example.aplicaciongestiontiendasgestor.vistas.modificarProductosFragment"
+        android:label="fragment_modificar_productos"
+        tools:layout="@layout/fragment_modificar_productos" >
+        <action
+            android:id="@+id/action_modificarProductosFragment_to_nav_gallery"
+            app:destination="@id/nav_gallery" />
+    </fragment>
+    <fragment
+        android:id="@+id/infoProductoFragment"
+        android:name="com.example.aplicaciongestiontiendasgestor.vistas.InfoProductoFragment"
+        android:label="fragment_info_producto"
+        tools:layout="@layout/fragment_info_producto" >
+        <action
+            android:id="@+id/action_infoProductoFragment_to_nav_gallery"
+            app:destination="@id/nav_gallery" />
+    </fragment>
+    <fragment
+        android:id="@+id/listaPedidos"
+        android:name="com.example.aplicaciongestiontiendasgestor.vistas.listaPedidosFragment"
+        android:label="fragment_lista_pedidos"
+        tools:layout="@layout/fragment_lista_pedidos" >
+        <action
+            android:id="@+id/action_listaPedidos_to_lineaPedido"
+            app:destination="@id/lineaPedido" />
+    </fragment>
+    <fragment
+        android:id="@+id/lineaPedido"
+        android:name="com.example.aplicaciongestiontiendasgestor.vistas.lineaPedidoFragment"
+        android:label="fragment_linea_pedido"
+        tools:layout="@layout/fragment_linea_pedido" >
+        <action
+            android:id="@+id/action_lineaPedido_to_infoLinea"
+            app:destination="@id/infoLinea" />
+        <action
+            android:id="@+id/action_lineaPedido_to_modificarPedido"
+            app:destination="@id/modificarPedido" />
+    </fragment>
+    <fragment
+        android:id="@+id/infoLinea"
+        android:name="com.example.aplicaciongestiontiendasgestor.vistas.infoLinea"
+        android:label="fragment_info_linea"
+        tools:layout="@layout/fragment_info_linea" />
+    <fragment
+        android:id="@+id/modificarPedido"
+        android:name="com.example.aplicaciongestiontiendasgestor.vistas.modificarLineaPedido"
+        android:label="fragment_modificar_pedido"
+        tools:layout="@layout/fragment_modificar_pedido" >
+        <action
+            android:id="@+id/action_modificarPedido_to_lineaPedido"
+            app:destination="@id/lineaPedido" />
+    </fragment>
+
+</navigation>
