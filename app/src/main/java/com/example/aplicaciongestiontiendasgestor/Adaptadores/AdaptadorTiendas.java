@@ -93,6 +93,7 @@ public class AdaptadorTiendas extends RecyclerView.Adapter<AdaptadorTiendas.Adap
     private void eliminarTienda(Tiendas t) {
         dialog = new ProgressDialog(context);
         dialog.setMessage("Borrando tienda");
+        dialog.setCancelable(false);
         dialog.show();
         String url = "http://matfranvictor.atwebpages.com/borrarTienda.php?idTienda=" + t.getIdTienda();
 

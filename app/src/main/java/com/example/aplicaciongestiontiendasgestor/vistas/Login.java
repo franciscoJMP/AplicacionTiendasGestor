@@ -4,6 +4,7 @@ package com.example.aplicaciongestiontiendasgestor.vistas;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
@@ -48,7 +49,7 @@ public class Login extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_login, container, false);
-
+        ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
         cargarComponentes(root);
 
         acceso.setOnClickListener(new View.OnClickListener() {

@@ -160,6 +160,7 @@ public class AdaptadorPedidos extends RecyclerView.Adapter<AdaptadorPedidos.Adap
         if(us.getSaldo()>=total  ){
             dialog = new ProgressDialog(context);
             dialog.setMessage("Actualizando pedido...");
+            dialog.setCancelable(false);
             dialog.show();
             String url = "http://matfranvictor.atwebpages.com/actualizarEstadoPedido.php?idPedido=" + pedidos.getIdPedido();
 
@@ -234,6 +235,7 @@ public class AdaptadorPedidos extends RecyclerView.Adapter<AdaptadorPedidos.Adap
 
         dialog = new ProgressDialog(context);
         dialog.setMessage("Borrando pedido...");
+        dialog.setCancelable(false);
         dialog.show();
         String url = "http://matfranvictor.atwebpages.com/borrarPedido.php?idPedido=" + p.getIdPedido();
 

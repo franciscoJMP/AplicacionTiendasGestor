@@ -65,7 +65,6 @@ public class infoLinea extends Fragment {
 
     private void cargarProducto() {
         String url = "http://matfranvictor.atwebpages.com/listarProductoIDProducto.php?producto="+lineas.getIdProducto();
-        Log.d("Error",url);
         listaProductos.clear();
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override

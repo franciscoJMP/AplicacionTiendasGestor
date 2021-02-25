@@ -102,6 +102,7 @@ public class AdaptadorLineasPedido extends RecyclerView.Adapter<AdaptadorLineasP
     private void eliminarLineasPedido(LineasPedidos lp) {
         dialog = new ProgressDialog(context);
         dialog.setMessage("Borrando linea pedido...");
+        dialog.setCancelable(false);
         dialog.show();
         String url = "http://matfranvictor.atwebpages.com/borrarLinea.php?idLinea="+lp.getIdLinea()+"&idPedido="+lp.getIdPedido()+"&idProducto="+lp.getIdProducto()+"&cantidad="+lp.getCantidad();
 

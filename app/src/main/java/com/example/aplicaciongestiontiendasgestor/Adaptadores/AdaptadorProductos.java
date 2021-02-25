@@ -101,6 +101,7 @@ public class AdaptadorProductos extends RecyclerView.Adapter<AdaptadorProductos.
 
         dialog = new ProgressDialog(context);
         dialog.setMessage("Borrando producto...");
+        dialog.setCancelable(false);
         dialog.show();
         String url = "http://matfranvictor.atwebpages.com/borrarProducto.php?idProducto=" + p.getIdProducto();
 

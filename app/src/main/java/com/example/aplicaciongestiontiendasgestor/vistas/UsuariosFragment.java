@@ -82,6 +82,7 @@ public class UsuariosFragment extends Fragment {
     private void cargarUsuarios() {
         dialog = new ProgressDialog(getContext());
         dialog.setMessage("Cargando Usuarios");
+        dialog.setCancelable(false);
         dialog.show();
         String url = "http://matfranvictor.atwebpages.com/listadoUsuarios.php";
         listaUsuario.clear();

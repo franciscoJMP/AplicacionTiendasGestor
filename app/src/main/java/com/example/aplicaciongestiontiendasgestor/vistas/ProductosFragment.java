@@ -74,6 +74,7 @@ public class ProductosFragment extends Fragment {
     private void cargarProductos() {
         dialog = new ProgressDialog(getContext());
         dialog.setMessage("Cargando Productos");
+        dialog.setCancelable(false);
         dialog.show();
         String url = "http://matfranvictor.atwebpages.com/productos.php";
         listaProductos.clear();

@@ -92,6 +92,7 @@ public class listaPedidosFragment extends Fragment {
     private void cargarPedidos() {
         dialog = new ProgressDialog(getContext());
         dialog.setMessage("Cargando pedidos");
+        dialog.setCancelable(false);
         dialog.show();
         String url = "http://matfranvictor.atwebpages.com/listarPedidos.php?idUsuario="+usuario.getIdUsuario();
         listaPedidos.clear();

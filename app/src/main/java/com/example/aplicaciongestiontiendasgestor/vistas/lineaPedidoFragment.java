@@ -51,9 +51,7 @@ public class lineaPedidoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_linea_pedido, container, false);
-
         rv = root.findViewById(R.id.rv_lineas);
-
         layoutManager=new LinearLayoutManager(getActivity());
         rv.setLayoutManager(layoutManager);
 
@@ -70,6 +68,7 @@ public class lineaPedidoFragment extends Fragment {
     private void cargarLineas() {
         dialog = new ProgressDialog(getContext());
         dialog.setMessage("Cargando lineas de pedido");
+        dialog.setCancelable(false);
         dialog.show();
         String url = "http://matfranvictor.atwebpages.com/listarLineasPedido.php?idPedido="+product.getIdPedido();
         listaLineas.clear();

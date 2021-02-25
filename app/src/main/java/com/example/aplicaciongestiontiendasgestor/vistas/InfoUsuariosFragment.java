@@ -42,9 +42,7 @@ public class InfoUsuariosFragment extends Fragment {
 
         View root = inflater.inflate(R.layout.fragment_info_usuarios, container, false);
         Bundle b = getArguments();
-
         swiperefresh = root.findViewById(R.id.swiperefresh);
-
         swiperefresh.setOnRefreshListener(
                 new SwipeRefreshLayout.OnRefreshListener() {
                     @Override
@@ -54,8 +52,6 @@ public class InfoUsuariosFragment extends Fragment {
                     }
                 }
         );
-
-
 
         if (b != null) {
             usuario = (Usuarios) b.getSerializable("usu");

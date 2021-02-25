@@ -97,6 +97,7 @@ public class AdaptadorUsuarios extends RecyclerView.Adapter<AdaptadorUsuarios.Ad
 
         dialog = new ProgressDialog(context);
         dialog.setMessage("Borrando usuario");
+        dialog.setCancelable(false);
         dialog.show();
         String idUsuario = "\"" + u.getIdUsuario() + "\"";
         String url = "http://matfranvictor.atwebpages.com/eliminarUsuario.php?idUsuario=" + idUsuario;

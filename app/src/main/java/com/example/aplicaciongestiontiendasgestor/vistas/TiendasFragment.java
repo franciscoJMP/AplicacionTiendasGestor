@@ -75,6 +75,7 @@ public class TiendasFragment extends Fragment {
     private void cargarTiendas() {
         dialog = new ProgressDialog(getContext());
         dialog.setMessage("Cargando datos tiendas");
+        dialog.setCancelable(false);
         dialog.show();
         String url = "http://matfranvictor.atwebpages.com/tienda.php";
         listaTiendas.clear();
