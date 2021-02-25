@@ -23,10 +23,10 @@ import com.example.aplicaciongestiontiendasgestor.R;
 
 public class modificarUsuarioFragment extends Fragment {
 
-    EditText e1, e2, e3;
+    EditText e1, e2, e3,e4;
     private Button b1;
-    private String nombre,apellidos,saldo;
-    private String nombreAux,apellidosAux,saldoAux;
+    private String nombre,apellidos,saldo,tipo;
+    private String nombreAux,apellidosAux,saldoAux,tipoAux;
     private Usuarios usuario;
 
     @Override
@@ -45,10 +45,11 @@ public class modificarUsuarioFragment extends Fragment {
         e1 = root.findViewById(R.id.editTextTextPersonName);
         e2 = root.findViewById(R.id.editTextTextPersonName2);
         e3 = root.findViewById(R.id.editTextTextPersonName3);
-
+        e4 = root.findViewById(R.id.editTextTextPersonName4);
         e1.setText(usuario.getNombre());
         e2.setText(usuario.getApellidos());
         e3.setText(""+usuario.getSaldo());
+        e4.setText(usuario.getTipo());
 
 
         b1 = root.findViewById(R.id.button2);
@@ -69,6 +70,7 @@ public class modificarUsuarioFragment extends Fragment {
         nombre = e1.getText().toString();
         apellidos = e2.getText().toString();
         saldo = e3.getText().toString();
+        tipo = e4.getText().toString();
 
         if (nombre.isEmpty()) {
             nombreAux = null;
@@ -87,20 +89,27 @@ public class modificarUsuarioFragment extends Fragment {
             saldoAux = saldo;
         }
 
+        if(tipo.isEmpty()){
+            tipoAux=null;
+        }else{
+            tipoAux="\"" + tipo + "\"";
+        }
+
+
 
         String cooreoAux = "\"" + usuario.getCorreo() + "\"";
-        String url = "http://matfranvictor.atwebpages.com/actualizarUsuario.php?correo="+cooreoAux+"&nombre="+nombreAux+"&apellidos=" + apellidosAux + "&saldo=" + saldoAux;
+        String url = "http://matfranvictor.atwebpages.com/actualizarUsuario.php?correo="+cooreoAux+"&nombre="+nombreAux+"&apellidos=" + apellidosAux + "&saldo=" + saldoAux+"&tipo="+tipoAux;
+
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 b1.setEnabled(true);
                 if (response.contains("Correcto")) {
-                    Toast.makeText(getContext(),"Correcto",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(),"Usuario Modificado",Toast.LENGTH_SHORT).show();
                     Navigation.findNavController(getView()).navigate(R.id.action_modificarUsuarioFragment_to_nav_home);
                 } else {
                     Toast.makeText(getContext(),"Fallido",Toast.LENGTH_SHORT).show();
-                    // acceso.setEnabled(true);
                 }
             }
 

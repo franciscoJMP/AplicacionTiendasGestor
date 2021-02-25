@@ -68,6 +68,7 @@ public class AdaptadorPedidos extends RecyclerView.Adapter<AdaptadorPedidos.Adap
     public void onBindViewHolder(@NonNull AdaptadorViewHolder holder, int position) {
         Pedidos p = listaPedidos.get(position);
         holder.name.setText(""+p.getIdPedido());
+        holder.date.setText(p.getFechaPedido());
         if(p.getPagado()==0){
             holder.modificar.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -273,11 +274,12 @@ public class AdaptadorPedidos extends RecyclerView.Adapter<AdaptadorPedidos.Adap
 
     public class AdaptadorViewHolder extends RecyclerView.ViewHolder {
         private ConstraintLayout cl;
-        private TextView name;
+        private TextView name,date;
         private ImageButton modificar,borrar;
         public AdaptadorViewHolder(@NonNull View itemView) {
             super(itemView);
             name=itemView.findViewById(R.id.tvIdPedidos);
+            date=itemView.findViewById(R.id.tvFechaPedido);
             cl =itemView.findViewById(R.id.cl);
             modificar=itemView.findViewById(R.id.bt_edit_pedido);
             borrar=itemView.findViewById(R.id.bt_eliminar_pedido);

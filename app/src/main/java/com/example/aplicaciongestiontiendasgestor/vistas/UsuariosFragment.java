@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -39,6 +40,7 @@ public class UsuariosFragment extends Fragment {
     private ArrayList<Usuarios> listaUsuario = new ArrayList<>();
     private RecyclerView.Adapter adapter;
     private Button bCrear;
+    private SwipeRefreshLayout swiperefresh;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -63,6 +65,16 @@ public class UsuariosFragment extends Fragment {
         layoutManager = new LinearLayoutManager(getContext());
         rv = root.findViewById(R.id.recyclerUsuarios);
         rv.setLayoutManager(layoutManager);
+        swiperefresh = root.findViewById(R.id.swiperefresh);
+        swiperefresh.setOnRefreshListener(
+                new SwipeRefreshLayout.OnRefreshListener() {
+                    @Override
+                    public void onRefresh() {
+                        cargarUsuarios();
+                        swiperefresh.setRefreshing(false);
+                    }
+                }
+        );
         cargarUsuarios();
         return root;
     }
@@ -86,6 +98,7 @@ public class UsuariosFragment extends Fragment {
                         u.setApellidos(jsonObject.get("apellidos").toString());
                         u.setSaldo(Float.parseFloat(jsonObject.get("saldo").toString()));
                         u.setIdUsuario(Integer.parseInt(jsonObject.get("idUsuario").toString()));
+                        u.setTipo(jsonObject.get("tipo").toString());
                         listaUsuario.add(u);
 
                     }
