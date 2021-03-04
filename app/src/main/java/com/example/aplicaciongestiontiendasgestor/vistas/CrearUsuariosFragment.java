@@ -2,6 +2,7 @@ package com.example.aplicaciongestiontiendasgestor.vistas;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -31,9 +32,12 @@ public class CrearUsuariosFragment extends Fragment {
 
     }
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_crear_usuarios, container, false);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().show();
 
         tEmail = root.findViewById(R.id.tEmail);
         tPassword = root.findViewById(R.id.tPassword);

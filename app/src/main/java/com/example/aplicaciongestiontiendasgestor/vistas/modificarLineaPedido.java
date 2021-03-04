@@ -2,6 +2,7 @@ package com.example.aplicaciongestiontiendasgestor.vistas;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 
@@ -44,7 +45,7 @@ public class modificarLineaPedido extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        ((AppCompatActivity) getActivity()).getSupportActionBar().show();
         View root = inflater.inflate(R.layout.fragment_modificar_pedido, container, false);
 
         tv_cantidad_mod = root.findViewById(R.id.tv_cantidad_mod);

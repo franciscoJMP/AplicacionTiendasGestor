@@ -2,6 +2,8 @@ package com.example.aplicaciongestiontiendasgestor.vistas;
 
 
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -41,6 +43,7 @@ public class InfoProductoFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_info_producto, container, false);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().show();
         nombreTienda=view.findViewById(R.id.tvNombreProducto);
         cantidad=view.findViewById(R.id.tvCantidad);
         precio=view.findViewById(R.id.tvPrecioProducto);

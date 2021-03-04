@@ -10,6 +10,7 @@ import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -50,7 +51,7 @@ public class ProductosFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_productos, container, false);
-
+        ((AppCompatActivity) getActivity()).getSupportActionBar().show();
         rv = root.findViewById(R.id.rvProductos);
         crearProducto=root.findViewById(R.id.crearProducto);
 

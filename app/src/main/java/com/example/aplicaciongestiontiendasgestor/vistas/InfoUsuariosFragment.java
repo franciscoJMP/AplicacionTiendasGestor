@@ -2,6 +2,7 @@ package com.example.aplicaciongestiontiendasgestor.vistas;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -39,7 +40,7 @@ public class InfoUsuariosFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
+        ((AppCompatActivity) getActivity()).getSupportActionBar().show();
         View root = inflater.inflate(R.layout.fragment_info_usuarios, container, false);
         Bundle b = getArguments();
         swiperefresh = root.findViewById(R.id.swiperefresh);

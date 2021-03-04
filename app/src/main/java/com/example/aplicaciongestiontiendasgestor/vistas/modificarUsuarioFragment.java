@@ -2,6 +2,7 @@ package com.example.aplicaciongestiontiendasgestor.vistas;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
@@ -36,7 +37,7 @@ public class modificarUsuarioFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
+        ((AppCompatActivity) getActivity()).getSupportActionBar().show();
         View root = inflater.inflate(R.layout.fragment_modificar_usuario, container, false);
         Bundle b = getArguments();
         if (b != null) {

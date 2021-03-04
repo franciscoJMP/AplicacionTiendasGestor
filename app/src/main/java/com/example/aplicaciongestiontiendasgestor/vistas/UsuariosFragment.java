@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -43,7 +44,7 @@ public class UsuariosFragment extends Fragment {
     private SwipeRefreshLayout swiperefresh;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
+        ((AppCompatActivity) getActivity()).getSupportActionBar().show();
         View root = inflater.inflate(R.layout.fragment_usuarios, container, false);
         bCrear = root.findViewById(R.id.button);
 

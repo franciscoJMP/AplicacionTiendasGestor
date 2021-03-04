@@ -3,6 +3,7 @@ package com.example.aplicaciongestiontiendasgestor.vistas;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -47,6 +48,7 @@ public class infoLinea extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_info_linea, container, false);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().show();
         Bundle b = getArguments();
 
         if (b != null) {

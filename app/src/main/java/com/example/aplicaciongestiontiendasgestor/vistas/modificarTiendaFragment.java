@@ -2,6 +2,7 @@ package com.example.aplicaciongestiontiendasgestor.vistas;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
@@ -39,7 +40,7 @@ public class modificarTiendaFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_modificar_tienda, container, false);
-
+        ((AppCompatActivity) getActivity()).getSupportActionBar().show();
         Bundle b = getArguments();
         if (b != null) {
             tienda = (Tiendas) b.getSerializable("tienda");

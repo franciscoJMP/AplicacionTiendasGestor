@@ -2,6 +2,7 @@ package com.example.aplicaciongestiontiendasgestor.vistas;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
@@ -49,6 +50,7 @@ public class modificarProductosFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_modificar_productos, container, false);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().show();
         mod_nombre = view.findViewById(R.id.tv_nombre_mod);
         mod_cantidad = view.findViewById(R.id.tv_cantidad_mod);
         mod_precio = view.findViewById(R.id.tv_precio_mod);
